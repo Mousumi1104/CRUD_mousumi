@@ -1,0 +1,93 @@
+<app-employee>
+
+</app-employee>
+<div class="container1">
+<!--<c-row>
+  <c-col *ngFor="let item of Users | paginate: {itemsPerPage:10,currentPage:p} " [lg]="4">
+    <c-card class="mb-3">
+      <c-card-header>{{item.name}}</c-card-header>
+      <c-card-body>
+        <h5 cCardTitle>{{item.position}}</h5>
+        <p cCardText>
+          {{item.about}}
+        </p>
+
+        <p cCardText>
+          <span style="color: green;">Joining Date:</span> {{item.jo_date}}
+        </p>
+        <button *ngIf="token!=null" type="button" class="btn btn-primary"  (click)="sendtoUpdate(item)" data-bs-toggle="modal"
+          data-bs-target="#exampleModal">Edit</button>
+          <button *ngIf="token==null" type="button" class="btn btn-primary"  (click)="sendtoUpdate(item)" >Edit</button>
+          <button (click)="delete(item.id)" cButton>Delete</button>
+      </c-card-body>
+    </c-card>
+  </c-col>
+
+</c-row>-->
+<c-row>
+  <c-col class="mb-3" *ngFor="let item of Users | paginate: {itemsPerPage:10,currentPage:p} ;index as i">
+<div class="card mb-2 g-3 lg" style="width: 18rem;" >
+  <div class="card-body"  >
+    <h5 class="card-title"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTneuSHltDeEwU5J0QWNiZfJAwtCW9kU1zAow&usqp=CAU" alt="ing"><span style="color: rgb(58, 15, 177);">Name: </span>{{item.name}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><span style="color: rgb(103, 103, 103);">Position: </span>{{item.position}}</h6>
+    <p class="card-text">{{item.about}}</p>
+    <p class="card-text">
+      <span style="color: green;">Joining Date:</span> {{item.jo_date}}
+    </p>
+    <button  *ngIf="token!=null" type="button" class="btn btn-primary card-link"  (click)="sendtoUpdate(item,i)" data-bs-toggle="modal"
+    data-bs-target="#exampleModal">Edit</button>
+    <button *ngIf="token==null" type="button" class="btn btn-primary card-link"  (click)="sendtoUpdate(item,i)" >Edit</button>
+    <button class="card-link btn btn-secondary" (click)="delete(item.id,i)">Delete</button>
+  </div>
+</div>
+
+
+  <div  class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit User</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="ngForm" (ngSubmit)="Edit(ngForm.value)">
+            
+            <div class="mb-3">
+              <label class="form-label"><b>Name</b></label>
+              <input type="text" name="name" formControlName="name" class="form-control"  [(ngModel)]="empl.name" [(ngModel)]="name" >
+             
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><b>Position</b> </label>
+              <input type="text" name="lname" formControlName="position" class="form-control" [(ngModel)]="empl.position" [(ngModel)]="position">
+              
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><b>About</b></label>
+              
+              <input type="text" name="abou" formControlName="about" class="form-control" [(ngModel)]="empl.about" [(ngModel)]="about">
+              
+        
+            </div>
+            <div class="mb-3">
+              <label class="form-label"><b>Joining Date</b></label>
+              <br>
+              <input type="date" name="jo_date" formControlName="jo_date" class="form-control" [(ngModel)]="empl.jo_date" [(ngModel)]="jo_date" max="{{date | date:'yyyy-MM-dd'}}">
+             
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" (click)="updated(i)" data-bs-dismiss="modal">Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</c-col>
+</c-row>
+<div class="d-flex justify-content-center">
+  <pagination-controls (pageChange)="p=$event"></pagination-controls></div>
+
+</div>

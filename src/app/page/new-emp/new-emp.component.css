@@ -1,0 +1,44 @@
+.container {
+    padding: 20px;
+    width: 48rem; 
+    height: 62  rem;
+    /* position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50%, -50%);+*/
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background: white;
+    -webkit-box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
+    box-shadow: 2px 1px 21px -9px rgba(0, 0, 0, 0.38);
+  }
+  input.ng-invalid{
+    border-left: 5px solid red;
+   }
+   input.ng-valid{
+    border-left: 5px solid rgb(7, 116, 22);
+   }
+  .mb-3{
+width: 50%;
+position: relative;
+left: 25%;
+padding: 5px;
+   }
+   button{
+width: 50%;
+position: relative;
+left: 25%;
+
+   }
+   @media screen and (max-width: 1000px) {
+  .signupbtn {
+    width: 100%;
+  }
+  .container{
+    height: auto;
+    width: 100%;
+  }
+}

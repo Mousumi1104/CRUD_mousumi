@@ -1,0 +1,11 @@
+.flex{
+    display: flex;
+    justify-content: center;
+    margin: 8px;
+    background: white;
+    flex-direction: column;
+    align-items: center;
+  
+    z-index: 5;
+
+}

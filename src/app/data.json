@@ -1,0 +1,81 @@
+{
+  "user_data": [
+    {
+      "name": "Kaushik",
+      "position": "Software Engineer",
+      "about": "Employee",
+      "jo_date": "2023-01-02",
+      "id": 7
+    },
+    {
+      "name": "Reshmi",
+      "position": "Human Resource",
+      "about": "Employee",
+      "jo_date": "2023-01-02",
+      "id": 8
+    },
+    {
+      "name": "Payel",
+      "position": "Senior Web Developer",
+      "about": "Employee",
+      "jo_date": "2022-09-01",
+      "id": 9
+    },
+    {
+      "name": "Sayan",
+      "position": "Web Developer",
+      "about": "Intern",
+      "jo_date": "2023-02-02",
+      "id": 10
+    },
+    {
+      "name": "Vishal",
+      "position": "Web Developer",
+      "about": "Intern",
+      "jo_date": "2023-01-31",
+      "id": 11
+    },
+    {
+      "name": "Abhisek",
+      "position": "Business Analyst",
+      "about": "Intern",
+      "jo_date": "2023-01-29",
+      "id": 12
+    },
+    {
+      "name": "Sanjib",
+      "position": "Web Developer",
+      "about": "Intern",
+      "jo_date": "2023-01-05",
+      "id": 13
+    },
+    {
+      "name": "Gaurav ",
+      "position": "Accountant",
+      "about": "Intern",
+      "jo_date": "2022-12-14",
+      "id": 14
+    },
+    {
+      "name": "Kishore",
+      "position": "App Developer",
+      "about": "Intern",
+      "jo_date": "2023-01-29",
+      "id": 15
+    },
+    {
+      "name": "Jagdish",
+      "position": "Java Developer",
+      "about": "Employee",
+      "jo_date": "2022-12-08",
+      "id": 16
+    },
+    {
+      "name": "Mousumi",
+      "position": "Web Developer",
+      "about": "Intern",
+      "jo_date": "2023-01-29",
+      "id": 17
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+<app-employee></app-employee>
+<div class="container">
+  <form [formGroup]="create" (ngSubmit)="getuser(create.value)">
+    
+    <div class="mb-3">
+      <label class="form-label">Name <span style="color: red;">*</span></label>
+      <input type="text" name="name" formControlName="name" class="form-control"  [(ngModel)]="empl.name">
+      <span *ngIf="name && name.invalid && name.touched">Input field is no
+        t valid</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Position <span style="color: red;">*</span></label>
+      <input type="text" name="lname" formControlName="position" class="form-control" [(ngModel)]="empl.position">
+      <span *ngIf="position && position.invalid && position.touched">Input field is no
+        t valid</span>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">About<span style="color: red;">*</span></label>
+      
+      <input type="text" name="about" formControlName="about" class="form-control" [(ngModel)]="empl.about">
+      <span *ngIf="about && about.invalid && about.touched">about is not
+        valid</span>
+
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Joining Date<span style="color: red;">*</span></label>
+      <br>
+      <input type="date" name="jo_date" formControlName="jo_date" class="form-control" [(ngModel)]="empl.jo_date"  max="{{date | date:'yyyy-MM-dd'}}">
+      <span *ngIf="jo_date && jo_date.invalid && jo_date.touched">jo_date is not
+        valid</span>
+
+    </div>
+
+    <button type="button" class="btn btn-primary" (click)="submit()" value="Submit" [disabled]="!create.valid">Submit</button>
+    <br><br>
+    <button type="reset" class="btn btn-secondary" >Reset</button>
+  </form>

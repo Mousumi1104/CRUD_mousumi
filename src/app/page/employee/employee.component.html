@@ -1,0 +1,54 @@
+
+   <c-navbar class="bg-dark" colorScheme="dark" class="bg-primary" expand="lg" >
+    <c-container fluid>
+      <a cNavbarBrand href="https://coreui.io/angular/" target="_blank">
+       <img src="../../../assets/download.png" alt="img" width="25" height="24" style="background-color: transparent;">
+      </a>
+      <form cForm class="d-flex" role="search" [formGroup]="searchbar">
+        <input aria-label="Search" cFormControl class="me-2" placeholder="Search" type="search" formControlName="search" (keyup)="myFunc()" id="myInput" >
+       
+        <button [cNavbarToggler] cOffcanvasToggle="OffcanvasSidebar"></button>
+      <c-offcanvas
+        placement="end"
+        id="OffcanvasSidebar"
+      >
+        <c-offcanvas-header>
+          <h5 cOffcanvasTitle>Offcanvas</h5>
+          <button
+            cButtonClose
+            class="text-reset"
+            cOffcanvasToggle="OffcanvasSidebar"
+            aria-label="Close"
+          ></button>
+        </c-offcanvas-header>
+        <c-offcanvas-body>
+          <c-navbar-nav>
+            <c-nav-item>
+              <button class="btn btn-light button"  routerLink="/new" style="width: 150px;">New Employees</button>
+            </c-nav-item>
+            <c-nav-item>
+                <button class="btn btn-light button"  routerLink="/list" style="width: 100px;" >List View</button>
+              </c-nav-item>
+              <c-nav-item>
+                <button class="btn btn-light button"  routerLink="/card" style="width: 100px;">Card View</button>
+              </c-nav-item>
+            <c-nav-item>
+              <button  *ngIf="token!=null" class="btn btn-light button"  (click)="logout()">Logout</button>
+            </c-nav-item>
+            <c-nav-item>
+              <button class="btn btn-light button"  *ngIf="token==null" routerLink="/login">Login</button>
+            </c-nav-item>
+            
+           
+          </c-navbar-nav>
+          
+        </c-offcanvas-body>
+      </c-offcanvas>
+      </form>
+    </c-container>
+  </c-navbar>
+ 
+ 
+   
+   
+  

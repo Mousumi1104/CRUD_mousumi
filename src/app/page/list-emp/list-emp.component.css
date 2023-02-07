@@ -1,0 +1,16 @@
+.styles{
+    margin-left: 25%;
+}
+@media screen and (max-width: 1000px) {
+    .signupbtn {
+      width: 100%;
+    }
+    .container1{
+      height: auto;
+      width: 100%;
+      margin-left: 0;
+    }
+    .styles{
+        margin-left: 0;
+    }
+  }

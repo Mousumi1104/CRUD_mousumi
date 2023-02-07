@@ -1,0 +1,56 @@
+<c-navbar class="bg-dark" colorScheme="dark" class="bg-primary" expand="md" [ngStyle]="{ backgroundColor: '#e3f2fd' }">
+    <c-container fluid>
+      <a cNavbarBrand href="https://coreui.io/angular/" target="_blank">
+        <img src="../../../assets/download.png" alt="img" width="25" height="24" style="background-color: transparent;">
+      </a>
+      <form cForm class="d-flex" role="search">
+        <input aria-label="Search" cFormControl class="me-2" placeholder="Search" type="search">
+       
+        <button [cNavbarToggler] cOffcanvasToggle="OffcanvasSidebar"></button>
+      <c-offcanvas
+        placement="end"
+        id="OffcanvasSidebar"
+      >
+        <c-offcanvas-header>
+          <h5 cOffcanvasTitle>Offcanvas</h5>
+          <button
+            cButtonClose
+            class="text-reset"
+            cOffcanvasToggle="OffcanvasSidebar"
+            aria-label="Close"
+          ></button>
+        </c-offcanvas-header>
+        <c-offcanvas-body>
+          <c-navbar-nav>
+            <c-nav-item>
+              <button class="btn btn-light button"  routerLink="/list" >Employees</button>
+            </c-nav-item>
+            <c-nav-item>
+              <button class="btn btn-light button"  routerLink="/login">Login</button>
+            </c-nav-item>
+            
+           
+          </c-navbar-nav>
+          
+        </c-offcanvas-body>
+      </c-offcanvas>
+      </form>
+    </c-container>
+  </c-navbar>
+  
+  
+<div class="container">
+   
+    <form [formGroup] = "ngForm" (ngSubmit) = "Login()">
+    <div class="mb-3">
+    <label class="form-label"><b>Username</b><span style="color: red;">*</span></label>
+    <input type="text" class="form-control" placeholder="Enter Username" 
+    formControlName="t1" >
+    </div>
+    <div class="mb-3">
+    <label class="form-label"><b>Password</b><span style="color: red;">*</span></label>
+    <input type="password" class="form-control" placeholder="Enter Password" formControlName="t2">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="submit()">Login</button>
+    </form>
+    

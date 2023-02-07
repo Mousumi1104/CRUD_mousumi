@@ -1,0 +1,32 @@
+<app-employee></app-employee>
+<br><br><br>
+    <div class="row">
+    
+    <div class="col-md-8">
+    <table class="table table-bordered styles"  id="myTable">
+    <thead>
+    <tr>
+    <th><h5> #</h5></th>   
+    <th><h5> Name</h5></th>
+    <th><h5> Position </h5></th>
+    <th><h5> About </h5></th>
+    <th><h5> Joining Date </h5></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let Users of Users | paginate: {itemsPerPage:10,currentPage:p}; index as i " >
+        <td ><h6>{{i+1}}</h6></td>
+    <td>{{Users.name}}</td>
+    <td>{{Users.position}}</td>
+    <td>{{Users.about}}</td>
+    <td>{{Users.jo_date}}</td>
+    <td>
+    </td>
+    </tr>
+    </tbody>     
+    </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <pagination-controls (pageChange)="p=$event"></pagination-controls></div>
+     </div>
+ 
